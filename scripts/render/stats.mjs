@@ -10,6 +10,13 @@ const H = 440;
 const shortDate = (iso) =>
   iso ? new Date(`${iso}T00:00:00Z`).toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' }) : '';
 
+/** "SEP 4 – TODAY", "TODAY", "SEP 4 – SEP 25" … for the current streak. */
+export function streakLabel(streak, today) {
+  if (!streak?.days) return null;
+  const day = (iso) => (iso === today ? 'TODAY' : shortDate(iso).toUpperCase());
+  return streak.start === streak.end ? day(streak.end) : `${day(streak.start)} – ${day(streak.end)}`;
+}
+
 function sectionLabel(x, y, text) {
   return `<rect x="${x}" y="${y - 9}" width="8" height="8" fill="${theme.cyan}"/><text x="${x + 18}" y="${y}" font-size="15" font-weight="700" letter-spacing="3" fill="${theme.soft}">${esc(text)}</text>`;
 }
@@ -81,7 +88,7 @@ export function renderStats(config, data) {
   const cur = data?.streak?.current;
   const longest = data?.streak?.longest;
   body.push(
-    `<text x="${cx}" y="370" text-anchor="middle" font-size="16" font-weight="700" letter-spacing="2" fill="${theme.gold}">${cur?.days ? `${esc(shortDate(cur.start).toUpperCase())} – TODAY` : has ? 'SET SAIL TODAY' : 'CURRENT STREAK'}</text>`,
+    `<text x="${cx}" y="370" text-anchor="middle" font-size="16" font-weight="700" letter-spacing="2" fill="${theme.gold}">${esc(streakLabel(cur, data?.fetchedAt?.slice(0, 10)) ?? (has ? 'SET SAIL TODAY' : 'CURRENT STREAK'))}</text>`,
   );
   body.push(
     `<text x="${cx}" y="400" text-anchor="middle" font-size="16" fill="${theme.muted}">longest <tspan fill="${theme.text}" font-weight="700">${fmtInt(longest?.days)}</tspan> · lifetime <tspan fill="${theme.text}" font-weight="700">${fmtInt(data?.totalContributions)}</tspan></text>`,

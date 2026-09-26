@@ -7,7 +7,7 @@ import { measurePixelText, pixelCells } from '../scripts/lib/pixel.mjs';
 import { renderHeader } from '../scripts/render/header.mjs';
 import { renderTerminal, fillPlaceholders } from '../scripts/render/terminal.mjs';
 import { renderStack } from '../scripts/render/stack.mjs';
-import { renderStats } from '../scripts/render/stats.mjs';
+import { renderStats, streakLabel } from '../scripts/render/stats.mjs';
 import { renderProject } from '../scripts/render/project.mjs';
 import { renderFooter } from '../scripts/render/footer.mjs';
 import { renderSnake } from '../scripts/render/snake.mjs';
@@ -90,6 +90,13 @@ test('readableOn lifts dark brand colours off a dark background', () => {
 test('terminal placeholders are filled from data', () => {
   assert.equal(fillPlaceholders('{since}/{repos}/{yearContributions}', { since: 2018, publicRepos: 12, yearContributions: 1234 }), '2018/12/1,234');
   assert.equal(fillPlaceholders('{repos}', {}), '…');
+});
+
+test('streak label names the right days', () => {
+  assert.equal(streakLabel({ days: 1, start: '2026-09-26', end: '2026-09-26' }, '2026-09-26'), 'TODAY');
+  assert.equal(streakLabel({ days: 23, start: '2026-09-04', end: '2026-09-26' }, '2026-09-26'), 'SEP 4 – TODAY');
+  assert.equal(streakLabel({ days: 3, start: '2026-09-23', end: '2026-09-25' }, '2026-09-26'), 'SEP 23 – SEP 25');
+  assert.equal(streakLabel({ days: 0, start: null, end: null }, '2026-09-26'), null);
 });
 
 /** Minimal well-formedness check: every tag closes in order. */
