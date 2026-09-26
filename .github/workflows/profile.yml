@@ -1,0 +1,67 @@
+name: Refresh profile
+
+on:
+  schedule:
+    - cron: "23 4 * * *" # every day at 04:23 UTC
+  workflow_dispatch:
+  push:
+    paths:
+      - profile.config.mjs
+      - scripts/**
+      - test/**
+      - package.json
+      - package-lock.json
+      - .github/workflows/profile.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-profile
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+      - run: npm test
+
+      # The contribution-eating snake. If it hiccups, the last one is kept.
+      - name: Summon the sea serpent
+        uses: Platane/snk/svg-only@d8f6715049803e982ee5ff501b6b9b7d5deeb09b # v3.5.0
+        continue-on-error: true
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            .cache/snake.svg?palette=github-dark&color_snake=#fbbf24&color_dots=#101d38,#0e4a5c,#0f766e,#14b8a6,#5eead4
+
+      # Optional: add a PROFILE_TOKEN secret (a read-only personal access
+      # token) to count private contributions and private-repo languages in
+      # the totals. Private repo names are never written to the page, and the
+      # token is only handed to our own build script.
+      - name: Build cards
+        run: npm run build
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          PROFILE_TOKEN: ${{ secrets.PROFILE_TOKEN }}
+
+      - name: Commit refreshed cards
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets data README.md
+          if git diff --cached --quiet; then
+            echo "Nothing changed."
+            exit 0
+          fi
+          git commit -m "chore: refresh profile cards"
+          git pull --rebase
+          git push

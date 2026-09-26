@@ -1,0 +1,17 @@
+{
+  "name": "rexade-profile",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Generator for the rexade GitHub profile README cards.",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "simple-icons": "^16.32.0"
+  }
+}

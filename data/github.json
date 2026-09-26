@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "fetchedAt": null,
+  "login": "rexade",
+  "since": 2018,
+  "year": 2026,
+  "followers": 5,
+  "publicRepos": 12,
+  "stars": 0,
+  "prs": null,
+  "issues": null,
+  "commitsThisYear": null,
+  "yearContributions": null,
+  "totalContributions": null,
+  "streak": null,
+  "languages": [],
+  "repos": {
+    "tidebound-harbor-godot": {
+      "name": "tidebound-harbor-godot",
+      "url": "https://github.com/rexade/tidebound-harbor-godot",
+      "description": "Isometric harbor prototype in Godot 4",
+      "stars": 0,
+      "forks": 0,
+      "language": { "name": "GDScript", "color": "#355570" }
+    },
+    "ai-runtime-harness": {
+      "name": "ai-runtime-harness",
+      "url": "https://github.com/rexade/ai-runtime-harness",
+      "description": null,
+      "stars": 0,
+      "forks": 0,
+      "language": { "name": "TypeScript", "color": "#3178c6" }
+    },
+    "terminalorchestrator": {
+      "name": "terminalorchestrator",
+      "url": "https://github.com/rexade/terminalorchestrator",
+      "description": null,
+      "stars": 0,
+      "forks": 0,
+      "language": { "name": "TypeScript", "color": "#3178c6" }
+    },
+    "ai-skill-library": {
+      "name": "ai-skill-library",
+      "url": "https://github.com/rexade/ai-skill-library",
+      "description": "On-demand Claude Code skills — light, domain, and TDD packs",
+      "stars": 0,
+      "forks": 0,
+      "language": { "name": "Shell", "color": "#89e051" }
+    },
+    "aseprite-color-shader-ink-sync-": {
+      "name": "Aseprite-color-Shader-Ink-Sync-",
+      "url": "https://github.com/rexade/Aseprite-color-Shader-Ink-Sync-",
+      "description": "Aseprite color Shader Ink Sync  with Color theory.",
+      "stars": 0,
+      "forks": 0,
+      "language": { "name": "Lua", "color": "#000080" }
+    },
+    "mini-planet": {
+      "name": "mini-planet",
+      "url": "https://github.com/rexade/mini-planet",
+      "description": null,
+      "stars": 0,
+      "forks": 0,
+      "language": { "name": "JavaScript", "color": "#f1e05a" }
+    }
+  }
+}
