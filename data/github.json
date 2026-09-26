@@ -1,19 +1,61 @@
 {
   "version": 1,
-  "fetchedAt": null,
+  "fetchedAt": "2026-09-26T20:03:25.033Z",
   "login": "rexade",
   "since": 2018,
   "year": 2026,
   "followers": 5,
   "publicRepos": 12,
   "stars": 0,
-  "prs": null,
-  "issues": null,
-  "commitsThisYear": null,
-  "yearContributions": null,
-  "totalContributions": null,
-  "streak": null,
-  "languages": [],
+  "prs": 21,
+  "issues": 0,
+  "commitsThisYear": 53,
+  "yearContributions": 60,
+  "totalContributions": 149,
+  "streak": {
+    "current": {
+      "days": 1,
+      "start": "2026-09-26",
+      "end": "2026-09-26"
+    },
+    "longest": {
+      "days": 2,
+      "start": "2018-11-01",
+      "end": "2018-11-02"
+    }
+  },
+  "languages": [
+    {
+      "name": "TypeScript",
+      "color": "#3178c6",
+      "percent": 28.4
+    },
+    {
+      "name": "GDScript",
+      "color": "#355570",
+      "percent": 26.5
+    },
+    {
+      "name": "JavaScript",
+      "color": "#f1e05a",
+      "percent": 19.7
+    },
+    {
+      "name": "C#",
+      "color": "#7355dd",
+      "percent": 6.9
+    },
+    {
+      "name": "Python",
+      "color": "#3572A5",
+      "percent": 6.7
+    },
+    {
+      "name": "Shell",
+      "color": "#89e051",
+      "percent": 3.2
+    }
+  ],
   "repos": {
     "tidebound-harbor-godot": {
       "name": "tidebound-harbor-godot",
@@ -21,7 +63,10 @@
       "description": "Isometric harbor prototype in Godot 4",
       "stars": 0,
       "forks": 0,
-      "language": { "name": "GDScript", "color": "#355570" }
+      "language": {
+        "name": "GDScript",
+        "color": "#355570"
+      }
     },
     "ai-runtime-harness": {
       "name": "ai-runtime-harness",
@@ -29,31 +74,10 @@
       "description": null,
       "stars": 0,
       "forks": 0,
-      "language": { "name": "TypeScript", "color": "#3178c6" }
-    },
-    "terminalorchestrator": {
-      "name": "terminalorchestrator",
-      "url": "https://github.com/rexade/terminalorchestrator",
-      "description": null,
-      "stars": 0,
-      "forks": 0,
-      "language": { "name": "TypeScript", "color": "#3178c6" }
-    },
-    "ai-skill-library": {
-      "name": "ai-skill-library",
-      "url": "https://github.com/rexade/ai-skill-library",
-      "description": "On-demand Claude Code skills — light, domain, and TDD packs",
-      "stars": 0,
-      "forks": 0,
-      "language": { "name": "Shell", "color": "#89e051" }
-    },
-    "aseprite-color-shader-ink-sync-": {
-      "name": "Aseprite-color-Shader-Ink-Sync-",
-      "url": "https://github.com/rexade/Aseprite-color-Shader-Ink-Sync-",
-      "description": "Aseprite color Shader Ink Sync  with Color theory.",
-      "stars": 0,
-      "forks": 0,
-      "language": { "name": "Lua", "color": "#000080" }
+      "language": {
+        "name": "TypeScript",
+        "color": "#3178c6"
+      }
     },
     "mini-planet": {
       "name": "mini-planet",
@@ -61,7 +85,43 @@
       "description": null,
       "stars": 0,
       "forks": 0,
-      "language": { "name": "JavaScript", "color": "#f1e05a" }
+      "language": {
+        "name": "JavaScript",
+        "color": "#f1e05a"
+      }
+    },
+    "ai-skill-library": {
+      "name": "ai-skill-library",
+      "url": "https://github.com/rexade/ai-skill-library",
+      "description": "On-demand Claude Code skills — light, domain, and TDD packs",
+      "stars": 0,
+      "forks": 0,
+      "language": {
+        "name": "Shell",
+        "color": "#89e051"
+      }
+    },
+    "aseprite-color-shader-ink-sync-": {
+      "name": "Aseprite-color-Shader-Ink-Sync-",
+      "url": "https://github.com/rexade/Aseprite-color-Shader-Ink-Sync-",
+      "description": "Aseprite color Shader Ink Sync  with Color theory.",
+      "stars": 0,
+      "forks": 0,
+      "language": {
+        "name": "Lua",
+        "color": "#000080"
+      }
+    },
+    "terminalorchestrator": {
+      "name": "terminalorchestrator",
+      "url": "https://github.com/rexade/terminalorchestrator",
+      "description": null,
+      "stars": 0,
+      "forks": 0,
+      "language": {
+        "name": "TypeScript",
+        "color": "#3178c6"
+      }
     }
   }
 }
